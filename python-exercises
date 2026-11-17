@@ -1,0 +1,56 @@
+Anagram Detection (Word Game)
+def is_anagram(word1, word2):
+    return sorted(word1.lower()) == sorted(word2.lower())
+
+def give_points(pairs):
+    score = 0
+    for w1, w2 in pairs:
+        if is_anagram(w1, w2):
+            score += 1
+    return score
+
+word_pairs = [("car", "arc"), ("Listen", "Silent"), ("big", "small"), ("Evil", "Vile")]
+
+for w1, w2 in word_pairs:
+    print(w1, w2, is_anagram(w1, w2))
+
+print("Total Point:" , give_points(word_pairs))
+
+print("\n")
+
+Last Digit (Reading a Text Message)
+def last_digit(text):
+    digits = [ch for ch in text if ch.isdigit()]
+    if digits:
+        return digits[-1]
+    return None  
+
+message1= "Your order number is 4817 - Pay 25 TL"
+message2= "Hello World"
+print("Last Digit of message 1:", last_digit(message1))
+print("Last Digit of message 2:", last_digit(message2))
+print("\n")
+
+Primes (Lucky Days)
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def lucky_days(start, end):
+    return [day for day in range(start, end + 1) if is_prime(day)]
+
+print("Lucky Days:", lucky_days(1, 20))
+
+print("\n")
+
+Heterogeneous Data Structure (Student Profile)
+def print_profile(profile):
+    for item in profile:
+        print(item, "->", type(item))
+
+student_profile = ["Meryem", 20, 1.72, True]  # str, int, float, bool
+print_profile(student_profile)
