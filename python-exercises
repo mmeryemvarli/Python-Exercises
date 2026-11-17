@@ -52,5 +52,5 @@ def print_profile(profile):
     for item in profile:
         print(item, "->", type(item))
 
-student_profile = ["Meryem", 20, 1.72, True]  # str, int, float, bool
+student_profile = ["Ross", 22, 1.84, True]  # str, int, float, bool
 print_profile(student_profile)
